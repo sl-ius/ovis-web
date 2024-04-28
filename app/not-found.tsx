@@ -6,7 +6,7 @@ import Header_navbar from "@/components/navbar";
 import logo from "@/public/logo-dark.png";
 import Image from "next/image";
 
-const Page = () => {
+const NotFound = () => {
   return (
     <div id="loader-wrapper" className="overflow-x-auto">
       <div
@@ -24,7 +24,7 @@ const Page = () => {
   );
 };
 
-export default Page;
+export default NotFound;
 
 type props = {
   text: string;
