@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import { GoogleAnalytics } from '@next/third-parties/google';
+import { Sora } from "next/font/google";
+import Header_navbar from "@/components/navbar";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const sora = Sora({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Ovis",
-  description: "Open-source dashboard script that can be used on both studio development and game info checker.",
+  description: "Every details about us in Ovis.",
 };
 
 export default function RootLayout({
@@ -17,8 +17,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <GoogleAnalytics gaId="G-30VK9FSDCX" />
-      <body className={inter.className}>{children}</body>
+      <body className={sora.className}>
+        {children}
+      </body>
     </html>
   );
 }

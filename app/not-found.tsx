@@ -15,7 +15,7 @@ const Page = () => {
       >
         <div id="loader-text-container" className="flex gap-5 items-center">
           <AnimateText
-            text="I'm Sius"
+            text="What are you looking for? :)"
             className="text-center text-8xl font-extrabold uppercase"
           />
         </div>

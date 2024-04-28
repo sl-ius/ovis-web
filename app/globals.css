@@ -3,17 +3,5 @@
 @tailwind utilities;
 
 body {
-  color: rgb(var(0, 0, 0));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(0, 0, 0)
-    )
-    rgb(0, 0, 0);
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+  background: #fff
 }
