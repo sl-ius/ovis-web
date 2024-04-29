@@ -8,17 +8,13 @@ import Image from "next/image";
 
 const Page = () => {
   return (
-    <div id="loader-wrapper" className="overflow-x-auto">
-      <div
-        id="loader-inner"
-        className="relative flex justify-center min-h-screen"
-      >
-        <div id="loader-text-container" className="flex gap-5 items-center">
-          <AnimateText
-            text="I'm Sius"
-            className="text-center text-8xl font-extrabold uppercase"
-          />
-        </div>
+    <div id="wrapper" className="overflow-x-auto">
+      <div id="inner" className="relative flex justify-center min-h-screen">
+        <motion.div initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ ease: "easeOut", duration: 1.3 }} id="huge" className="flex flex-col gap-5 justify-center items-center">
+          <span className="font-extrabold justify-end">Hello There 👋</span>
+          <AnimateText text="I'm Sius" className="text-center text-8xl font-extrabold uppercase"/>
+          <span className="flex text-sm font-normal items-center text-white text-center animate-bounce rounded-full bg-black/100 w-[80px] h-[80px]">Scroll down</span>
+        </motion.div>
       </div>
     </div>
   );
@@ -48,7 +44,7 @@ const defaultvariants = {
   },
 };
 
-export const AnimateText = ({ text, el: Wrapper = "p", className }: props) => {
+export const AnimateText = ({ text, el: Wrapper = "div", className }: props) => {
   return (
     <Wrapper className={className}>
       <span className="sr-only">{text}</span>
@@ -60,14 +56,14 @@ export const AnimateText = ({ text, el: Wrapper = "p", className }: props) => {
         aria-hidden
       >
         {text.split(" ").map((word) => (
-          <span className="inline-block">
+          <div className="inline-block">
             {word.split("").map((char) => (
               <motion.span className="inline-block" variants={defaultvariants}>
                 {char}
               </motion.span>
             ))}
             <span className="inline-block">&nbsp;</span>
-          </span>
+          </div>
         ))}
       </motion.span>
     </Wrapper>
